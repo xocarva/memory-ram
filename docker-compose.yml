@@ -1,0 +1,7 @@
+version: '3.7'
+services:
+  memory-ram:
+    container_name: memory-ram
+    build: .
+    ports:
+      - '8080:80'
