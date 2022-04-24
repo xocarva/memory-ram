@@ -1,6 +1,22 @@
 header {
+    padding: 1rem;
     color: var(--secondary-color);
     background-color: var(--primary-color);
     text-align: center;
     flex-grow: 0;
+}
+
+h1 {
+    margin: 0;
+    font-size: calc(2.5vw + 2.5vh + 0.6rem);
+}
+
+h1 span {
+    font-size: calc(1.5vw + 1.5vh + 0.5rem);
+
+}
+
+.slogan {
+    font-size: calc(1.2vw + 1.2vh + 0.5rem);
+    font-style: italic;
 }
