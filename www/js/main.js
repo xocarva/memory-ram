@@ -24,7 +24,7 @@ const createList = tasks => {
         const remove = li.appendChild( document.createElement( 'span' ) );
         remove.id = `remove-${liId}`;
         remove.classList = 'fa-solid fa-delete-left remove';
-        remove.addEventListener( 'click', () => removeFromLocalStorage( i ) );
+        remove.addEventListener( 'click', ( e ) => removeFromLocalStorage( e, i ) );
         styleSheet.insertRule(`#remove-${liId}:hover ~ #task-${liId}{text-decoration:line-through;text-decoration-thickness:3px;}`);
 
         const taskText = li.appendChild( document.createElement( 'span' ) );
@@ -40,11 +40,13 @@ const createList = tasks => {
     });
 };
 
-const removeFromLocalStorage = index => {
+const removeFromLocalStorage = ( e, index ) => {
+    e.target.nextElementSibling.nextElementSibling.className = 'removed-item';
     const tasks = loadFromLocalStorage();
     tasks.splice( index, 1 );
     localStorage.setItem( 'tasks', JSON.stringify( tasks ) );
-    createList( loadFromLocalStorage() );
+    setTimeout(() => createList( loadFromLocalStorage() ), 900 );
+    // createList( loadFromLocalStorage() );
 };
 
 const addToLocalStorage = task => {
