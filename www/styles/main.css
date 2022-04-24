@@ -94,7 +94,7 @@ li {
 }
 
 .removed-item {
-    animation-duration: 1s;
+    animation-duration: 0.9s;
     animation-fill-mode: both;
     animation-name: running-ram;
 }
@@ -104,7 +104,7 @@ li {
         opacity: 1;
     }
     25% {
-        transform: rotate(30deg) scale(1.5);
+        transform: rotate(30deg) scale(3);
     }
     100% {
         opacity: 0;

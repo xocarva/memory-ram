@@ -45,8 +45,7 @@ const removeFromLocalStorage = ( e, index ) => {
     const tasks = loadFromLocalStorage();
     tasks.splice( index, 1 );
     localStorage.setItem( 'tasks', JSON.stringify( tasks ) );
-    setTimeout(() => createList( loadFromLocalStorage() ), 900 );
-    // createList( loadFromLocalStorage() );
+    setTimeout(() => createList( loadFromLocalStorage() ), 500 );
 };
 
 const addToLocalStorage = task => {
